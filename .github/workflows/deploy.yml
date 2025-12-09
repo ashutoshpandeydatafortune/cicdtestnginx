@@ -22,9 +22,9 @@ jobs:
 
       - name: Deploy files to EC2 via rsync
         env:
-          EC2_HOST: ${{ secrets.EC2_HOST }}
-          EC2_USER: ${{ secrets.EC2_USER }}
-          EC2_TARGET_DIR: ${{ secrets.EC2_TARGET_DIR }}
+          EC2_HOST: ${{ vars.EC2_HOST }}
+          EC2_USER: ${{ vars.EC2_USER }}
+          EC2_TARGET_DIR: ${{ vars.EC2_TARGET_DIR }}
         run: |      
           # Install rsync to copy files
           echo "Host = $EC2_HOST"
