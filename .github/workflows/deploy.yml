@@ -25,8 +25,12 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
           EC2_TARGET_DIR: ${{ secrets.EC2_TARGET_DIR }}
-        run: |
+        run: |      
           # Install rsync to copy files
+          echo "Host = ${{EC2_HOST}}"
+          echo "User = ${{EC2_USER}}"
+          echo "Directory = ${{EC2_TARGET_DIR}}"
+
           sudo apt-get update
           sudo apt-get install -y rsync
 
